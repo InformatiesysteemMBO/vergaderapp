@@ -8,5 +8,5 @@ var APPLICATION_CONFIG = {
     redirectUri: "http://localhost:8080/",
     interactionMode: "popUp",
     graphEndpoint: "https://graph.microsoft.com/v1.0/me",
-    graphScopes: ["user.read user.read.all user.readbasic.all"]
+    graphScopes: ["user.read user.read.all user.readbasic.all calendars.readwrite.shared"]
 };

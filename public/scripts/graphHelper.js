@@ -61,7 +61,7 @@ var clientApplication;
         },
 		
 		vrijeruimtes: function vrijeruimtes() {
-			return $http.get('https://graph.microsoft.com/beta/me/findRoomLists');
+			return $http.get('https://graph.microsoft.com/beta/me/findRooms');
 		}
       }
     }]);

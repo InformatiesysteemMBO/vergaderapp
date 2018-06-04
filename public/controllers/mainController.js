@@ -55,7 +55,6 @@
 
           // Get the profile of the current user.
           GraphHelper.me().then(function(response) {
-            
             // Save the user to localStorage.
             let user =response.data;
             localStorage.setItem('user', angular.toJson(user));
@@ -94,10 +93,27 @@
 	}
 	
 	function getVrijeRuimtes() {
-	alert();
-		
 		GraphHelper.vrijeruimtes().then(function(response) {
-			alert(response.data);
+			let rooms = response.data;	
+			
+			//Alle ruimtes doorlopen en weergeven
+			for (var values in rooms) {
+				var obj = rooms[values];
+				if (values == "value") {
+					for (var room in obj) {
+						console.log(obj[room].name);
+						document.getElementById('vrijeruimteslist').innerHTML += "<li>"+obj[room].name+"<button id='"+obj[room].name+"'>Reserveer</button></li>";
+						//Controleren of de ruimte bezet is
+						
+						//Call naar server om de status van een ruimte op te halen
+						
+						//If statement om te kijken of de status free of busy is
+						
+						//Als status free is toevoegen aan de lijst van ruimtes
+						//document.getElementById('vrijeruimteslist').innerHTML += "<li>"+obj[room].name+"</li>";
+					}
+				}
+			}
 		});
 	}
 	
